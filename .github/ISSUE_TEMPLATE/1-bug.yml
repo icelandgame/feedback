@@ -1,0 +1,75 @@
+name: Bug 回報
+description: 遊戲或網站壞掉、表現和預期不同
+labels: ["bug", "待確認"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        這裡**所有人都看得到**。不要貼密碼、信箱、登入碼。資安漏洞請不要公開，寄信到 support@icelandtw.xyz。
+  - type: dropdown
+    id: where
+    attributes:
+      label: 在哪裡發生
+      options:
+        - 遊戲：遊玩、判定
+        - 遊戲：選歌、設定、介面
+        - 遊戲：多人房間
+        - 遊戲：重播
+        - 遊戲：製譜器
+        - 遊戲：安裝、更新、啟動
+        - 網站
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 遊戲版本
+      description: 標題畫面右下角，例如 BETA 2026-11 BUILD 11。網站的問題可以不填
+      placeholder: BETA 2026-11 BUILD 11
+  - type: textarea
+    id: what
+    attributes:
+      label: 發生什麼事
+      description: 你看到了什麼？原本預期應該怎樣？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 怎麼重現
+      description: 一步一步寫。如果和某首歌、某個難度有關，寫上曲名和難度
+      placeholder: |
+        1. 打開某首歌的某個難度
+        2. 在第 30 秒左右……
+        3. 結果……
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: 多常發生
+      options:
+        - 每次都會
+        - 有時候會
+        - 只發生過一次
+  - type: textarea
+    id: media
+    attributes:
+      label: 截圖或影片
+      description: 可以直接把檔案拖進這個框
+  - type: textarea
+    id: environment
+    attributes:
+      label: 電腦環境（選填）
+      description: 卡頓、聲音不同步、畫面顯示問題的時候特別有用
+      placeholder: |
+        Windows 版本：
+        顯示卡：
+        螢幕更新率：
+        耳機或喇叭（有線、藍牙）：
+  - type: input
+    id: player
+    attributes:
+      label: 遊戲裡的名稱（選填）
+      description: 方便我們查成績和重播紀錄。名稱本來就是公開的

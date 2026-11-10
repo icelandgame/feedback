@@ -1,0 +1,42 @@
+name: 譜面問題
+description: 譜面錯誤、音樂時間對不上、授權疑慮、不當內容
+labels: ["譜面", "待確認"]
+body:
+  - type: input
+    id: mapset
+    attributes:
+      label: 曲包
+      description: 網站上曲包頁的網址，或曲名加譜師名稱
+    validations:
+      required: true
+  - type: input
+    id: difficulty
+    attributes:
+      label: 難度
+      description: 和所有難度都有關的話可以不填
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 問題類型
+      options:
+        - 譜面錯誤（音符位置、時間、不可能的配置）
+        - 音樂時間對不上（整首偏早或偏晚）
+        - 難度標示不合理
+        - 授權疑慮（我是權利人，或知道這首歌不能用）
+        - 不當內容
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: time
+    attributes:
+      label: 時間點
+      description: 問題出現在第幾秒，或第幾小節
+      placeholder: 例如 1:23
+  - type: textarea
+    id: what
+    attributes:
+      label: 說明
+      description: 能附截圖或影片最好。授權問題請說明你和這首歌的關係
+    validations:
+      required: true
